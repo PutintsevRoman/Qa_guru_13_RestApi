@@ -1,0 +1,70 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+
+@PutintsevRoman
+nkramar
+/
+qa_guru_13_homework_16_owner
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+qa_guru_13_homework_16_owner/.gitignore
+@nkramar
+nkramar removed unused dependencies. added tag for test.
+Latest commit f401fde 17 days ago
+ History
+ 1 contributor
+42 lines (36 sloc)  408 Bytes
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Properties files
+*.properties
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.iml
+
+# Project gen files
+.idea
+.allure/
+.gradle/
+allure-results/
+gradle/
+build/
+bin/
+out/
+logs/
+target/
+.classpath
+.project
+.settings/org.eclipse.buildship.core.prefs
+.vscode
+/gradlew
+/gradlew.bat
