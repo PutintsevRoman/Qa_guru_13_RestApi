@@ -11,11 +11,13 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
+import static org.hamcrest.Matchers.hasItem;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static specs.ListResourceSpecs.*;
 import static specs.RegistrationSpecs.requestSpecificationRequest;
 import static specs.RegistrationSpecs.requestSpecificationResponse;
 
-public class ModelsTests {
+public class ModelsTests extends TestBase {
 
     @Test
     @DisplayName("Clean pojo model test")
@@ -83,5 +85,18 @@ public class ModelsTests {
 
         assertEquals(registrationDataResponse.getId(),"4");
         assertEquals(registrationDataResponse.getToken(),"QpwL5tke4Pnpja7X4");
+    }
+
+    @Test
+    @DisplayName("Spec Groovy Test")
+    void checkEmailUsingGroovy (){
+        given()
+                .spec(listRequestSpecs)
+                .when()
+                .get("/users?delay=3")
+                .then()
+                .spec(listResponseSpecs)
+                .body("data.findAll{it.email =~/.*?@reqres.in/}.email.flatten()",
+                        hasItem("emma.wong@reqres.in"));
     }
 }
